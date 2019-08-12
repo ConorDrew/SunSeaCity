@@ -1,0 +1,831 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face{
+    font-family: cool;
+    src: url('../fonts/coolvetica.ttf');
+        
+}
+
+.accent-pink{
+    color: #e63264;
+}
+.position{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1{
+    font-family: cool;
+    text-transform: uppercase;
+    font-weight: 400;
+    font: 35px;
+}
+
+/*-----Header-----*/
+header{
+    padding: 25px;
+    /*background: #e63264;*/
+    display: flex;
+    justify-content: space-between;
+}
+header a{
+    color: inherit;
+    text-decoration: none;
+}
+.small{
+    display: none;
+}
+
+/*-----Nav-----*/
+ul{
+    list-style: none;
+    display: flex;
+}
+ul a{
+    text-decoration: none;
+    color: white;
+    font-family: cool;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #e63264;
+    /*--position--*/
+    float: left;
+    text-align: center;
+    width: 130px;
+    height: 50px;
+}
+ul a:hover{
+    background-color: red;
+}
+ul li{
+    line-height: 50px;
+}
+/*-----Dropdown-----*/
+ul ul{
+    display: none;
+    position: relative;
+   
+}
+ul li:hover  ul{
+    display: block;
+    position: absolute;
+    animation: dropdown 500ms ease-in-out forwards;
+    transform: perspective(1000px);    
+
+}
+
+@keyframes dropdown{
+    0% {opacity:0;
+        transform: rotateX(50deg);
+        top: 25px;
+    }
+    100% {opacity: 1;
+        transform: rotateX(0deg);
+        top: 75px;
+    }
+}
+
+/*-----Homepage-----*/
+.homepage-text {
+    text-align: center;
+    padding-bottom: 25px;
+}
+.homepage{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.homepage h1{
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    padding-bottom: 25px;
+}
+
+.morphext > .animated { /*For Plugin*/
+    display: inline-block;
+}
+
+
+/*-----Slider-----*/
+.location-box h1{
+    position: absolute;
+    font: 400 93px Cool;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 225px;
+    width: 677px;
+    margin: 0;
+}
+.location-box{
+    width: 715px;
+    height: 250px;
+    overflow: hidden;
+    margin: 0 25px 25px;
+}
+.location-box .slider{
+    display: block;
+    width: 3575px;
+    height: 250px;
+    margin: 0;
+    padding: 0; 
+}
+.slider .slide{
+    float: left;
+    list-style-type: none;
+}
+
+
+/*-----houses-----*/
+
+.house{
+    width: 315px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 25px 50px;
+}
+.house:hover .info{
+    opacity: 1;
+    transform: translateY(-62px);
+    transition-duration: 1000ms;
+}
+.house img{
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+}
+.house .video{
+    display: block;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    
+}
+.house:hover .video{
+    display: block;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.house .info{
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    top: 250px;
+    transition: all 0.15s ease-in-out;
+    transition-duration: 1000ms;
+    z-index: 5;
+}
+.house .blur{
+    background-color: rgba(0,0,0,0.7);
+    height: 62px;
+    width:315px;
+    z-index: 5;
+    position: absolute;
+}
+.house .text{
+    z-index: 10;
+    color: #fff;
+    position: absolute;
+    width: 315px;
+    height: 62px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 5px;
+    font: 100 15px Cool;
+    letter-spacing: 2px;
+}
+.house .text h3{
+    position: relative;
+}
+.house .text .left h3{
+    text-align: left;
+    padding-left: 10px;
+}
+.house .text .left .bottom{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+.house .text .left .bottom img{
+    width: 25px;
+}
+.house .text .left .bottom img{
+    padding: 0 7px;
+    height: 15px;
+}
+.house .text .left .bottom h4{
+    padding-right: 0px;
+    top: -3px;
+    left: 4px;
+    position: relative;
+}
+.house .text .right{
+    top: 12px;
+    position: relative;
+}
+.house .text .right span{
+    color: #ffffff;
+    font: 400 20px ArialNarrow;
+}
+/*-----Footer-----*/
+footer{
+    background-color: #e63264;
+    height: 200px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    clear: both;
+}
+/*-----Buttons-----*/
+.buttons{
+    width: 40%;
+}
+.fbbutton,
+.tabutton{
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    height: 50px;
+    width: 200px;
+    display: inline-block;
+}
+.fbbutton h2{
+    position: absolute;
+    color: #e63264;
+    font: 400 26px Cool;
+    text-transform: uppercase;
+}
+.fbbutton img,
+.tabutton img{
+    float: right;
+}
+.tabutton{
+    float:right;
+}
+.tabutton h2{
+    position: absolute;
+    color: #e63264;
+    font: 400 20px Cool;
+    text-transform: uppercase;
+}
+.searchbox {
+    float: left;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+/*-----subscribe-----*/
+
+.form{
+    border: 4px solid white;
+    box-shadow: 0 3px 8px;
+    margin: 50px 0;
+    background: rgba(255,255,255,0.4);
+    display: flex;
+    width: 468px;
+    text-transform: uppercase;
+}
+.form label{
+    position: absolute;
+    z-index: 4;
+    color: #ffffff;
+    font: 300 10px Cool;
+    letter-spacing: 2px;
+    left:10px;
+    text-transform: uppercase;
+}
+.form input{
+    position: relative;
+    display: block;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px;
+    font: 400 15px cool;
+    background: none;
+    letter-spacing: 2px;
+    border: none;
+    text-transform: uppercase;
+}
+.form input[type="submit"]{
+    width: 200px;
+    background: white;
+    border: none;
+    color: #e63264;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*-----Locations-----*/
+.locations-title{
+    width: 1000px;
+    margin: 0 auto;
+}
+.houses-wrap{
+    text-decoration: none;
+}
+.houses {
+    margin: 50px auto;
+    max-width: 990px;
+   
+    display: flex;
+}
+.houses > img{
+    padding-right: 25px;
+    min-width: 330px;
+    width: 330px;
+    min-height: 265px;
+    height: 265px;
+}
+.houses .info{
+    padding: 10px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex: 1;
+}
+
+.houses .info h1{
+    color: #e63264;
+    font: 400 40px Cool;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: left;
+}
+.houses .info h2{
+    color: #000000;
+    font: 400 25px Cool;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+.houses .info h3{
+    color: #666666;
+    font: 400 20px CenturySchoolbook;
+    padding: 10px 0;
+}
+.houses .info .icon-box{
+    padding-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.houses .info .icon-box .icons{
+    display: flex;
+    justify-content: space-around;
+}
+.houses .info .icon-box .icons img{
+    width: 80%;
+    height: 80%;
+    max-height: 80%;
+}
+.houses .info .icon-box .icons h4{
+    color: #e63264;
+    font: 400 2em Cool;
+    padding-right: 15px;
+}
+/*-----Destination-----*/
+
+.destinations-title{
+    text-align: center;
+}
+.destinations-title h2{
+    color: #000000;
+    font: 400 20px Cool;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+.destinations-map{
+    align-content: center;
+    height: 550px;
+}
+
+/*-----Contact forms-----*/
+.contact-wrap{
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0 ;
+}
+.contact-title{
+    text-align: center;
+}
+
+.contact-forms{
+    background-color: #e63264;
+    width: 589px;
+    height: 560px;
+    padding: 1px 50px;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+}
+.contact-forms .form{
+    border: 4px solid white;
+    box-shadow: 0 3px 8px;
+    margin: 50px auto;;
+    background: rgba(255,255,255,0.4);
+    display: flex;
+    width: 468px;
+    text-transform: uppercase;
+}
+
+.contact-forms .form label{
+    position: absolute;
+    z-index: 4;
+    color: #ffffff;
+    font: 300 10px Cool;
+    letter-spacing: 2px;
+    left: 70px;
+    text-transform: uppercase;
+}
+
+.contact-forms .form input{
+    position: relative;
+    display: block;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px;
+    font: 400 15px cool;
+    background: none;
+    letter-spacing: 2px;
+    border: none;
+    text-transform: uppercase;
+}
+
+.contact-forms .send{
+    width: 150px;
+    height: 50px;
+    background: white;
+    border: none;
+    color: #e63264;
+    font: 400 20px Cool;
+    text-transform: uppercase;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+}     
+
+/*-----info-----*/
+.contact-info {
+    width: 402px;
+    float: right;
+    padding-top: 35px;
+}
+.contact-info h1{
+    text-align: center;
+    padding: 20px;
+}
+.contact-info h2{
+    padding: 2px 70px;
+    font: 400 25px Cool;
+    text-transform: uppercase;
+}
+
+/*-----gallary-----*/
+.house-gallary{
+    width: 750px;
+    margin-bottom: 50px;
+}
+.house-gallary > img{
+    width: 750px;
+    height: 450px;
+}
+.thumb-wrap{
+    height: 150px;
+    width: 750px;
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.thumb-wrap .thumbs{
+    padding: 0 0px;
+    display: flex;
+    align-self: center;
+    overflow: hidden;
+}
+.thumbs img{
+    padding: 0 15px;
+    cursor: pointer;
+    min-width: 120px;
+    width: 120px;
+    min-height: 120px;
+    height: 120px;
+}
+.arrow-prev,
+.arrow-next
+{
+    height: 100%;
+    width: 25px;
+    position: absolute;
+    left: 0px;
+    display: flex;
+    transition: all 0.2s ease-in-out;
+}
+.arrow-next{
+    right: 0;
+    left:  auto;
+}
+.prev,
+.next{
+    opacity: 0.8;
+}
+.prev{
+    transform: rotate(180deg);
+}
+.arrow-prev .prev,
+.arrow-next .next
+{
+    width: 100%;
+    align-self: center;
+
+}
+.arrow-prev:hover,
+.arrow-next:hover{
+    background: rgba(0,0,0,0.4);
+}
+/*-----house page-----*/
+.house-wrap{
+    width: 750px;
+    text-align: center;
+    float:left;
+    margin-top: 50px;
+}
+
+/*-----house info-----*/
+.house-info{
+    width: 360px;
+    height: 300px;
+    text-align: center;
+    float: right;
+    margin-top: 50px;
+
+}
+.house-info h1{
+    padding-bottom: 20px;
+}
+.house-info h2{
+    color: #000000;
+    font: 400 17px Cool;
+    padding-bottom: 20px;
+}
+.house-info h3{
+    color: #666666;
+    font: 400 17px CenturySchoolbook;
+    padding-bottom: 50px;
+}
+.house-info .bottom{
+    display: flex;
+    justify-content: space-around;
+}
+.house-info .bottom button{
+    background:none;
+    background-color: #e63264;
+    color: white;
+    color: #ffffff;
+    font: 400 24px Cool;
+    width: 151px;
+    height: 50px;
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+}
+.house-info .bottom h2{
+    display: flex;
+    padding-bottom: 0;
+    align-items: center;  
+    
+}
+/*-----House info small-----*/
+.info-media{
+    margin-bottom: 50px;
+    display: none;
+}
+.info-media h1{
+    padding-bottom: 25px;
+}
+.info-media h2{
+    color: #000000;
+    font: 400 17px Cool;
+    padding-bottom: 20px;
+}
+.info-media h3{
+    color: #666666;
+    font: 400 17px CenturySchoolbook;
+    padding-bottom: 50px;
+}
+.info-media .bottom{
+    display: flex;
+    justify-content: space-around;
+}
+.info-media .bottom button{
+    background:none;
+    background-color: #e63264;
+    color: white;
+    color: #ffffff;
+    font: 400 24px Cool;
+    width: 151px;
+    height: 50px;
+    letter-spacing: 2px;
+    border: none;
+}
+.info-media .bottom h2{
+    display: flex;
+    padding-bottom: 0;
+    align-items: center;  
+    
+}
+
+/*-----property-----*/
+.property{
+    margin-bottom: 50px;
+}
+.property h1{
+    padding-bottom: 25px;
+}
+.property h3{
+    color: #666666;
+    font: 400 17px CenturySchoolbook;
+}
+
+/*-----facility-----*/
+.facilities{
+    margin-bottom: 50px;
+}
+.facilities h1{
+    padding-bottom: 25px;
+}
+.facilities .icon-box{
+    padding-top: 10px;
+    width: 100%;;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+.facilities .icon-box .icons{
+    display: flex;
+    justify-content: space-around;
+}
+.facilities .icon-box .icons h4{
+    color: #e63264;
+    font: 400 30px Cool;
+    padding-right: 15px;
+}
+.facilities .icon-box .icons img{
+    width: 38px;
+    height: 36px;
+}
+
+/*-----map-----*/
+.map{
+    margin-bottom: 50px;
+}
+.map h1{
+    padding-bottom: 25px;
+}
+.map iframe,
+.destinations-map iframe{
+    width: 100%;
+    height: 502px;
+    border: none;
+    
+}
+
+/*-----review-----*/
+.reviews{
+    margin-bottom: 50px;
+}
+.reviews h1{
+    padding-bottom: 25px;
+}
+.reviews .comments{
+    padding: 25px;
+    word-wrap: break-word;
+    text-align: left;
+    margin-bottom: 15px;
+}
+.comments span{
+    color: #e63264;
+    font-family: cool;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-weight: 400;
+}
+.comments p{
+    margin: 30px 0px;
+    font-size: 20px;
+    font-family: cool;
+}
+.comments hr{
+    border-color: rgba(0,0,0,0.1);
+    padding: 0px;
+    margin: 0px 50px;;
+}
+.commentbox h2{
+    font-family: cool;
+    letter-spacing: 2px;
+}
+button{
+    background:none;
+    background-color: #e63264;
+    color: white;
+    color: #ffffff;
+    font: 400 24px Cool;
+    width: 151px;
+    height: 50px;
+    letter-spacing: 2px;
+    border: none;
+}
+.commentbox input,
+.commentbox textarea{
+    position: relative;
+    display: block;
+    height: 50px;
+    width: 700px;
+    padding: 0 10px;
+    font: 400 15px cool;
+    background: none;
+    letter-spacing: 2px;
+    border: 1px solid rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    margin: 10px 0px;
+}
+#namebox{
+    width: 40%;
+}
+#comment{
+    padding: 10px;
+}
+.commentbox{
+    text-align: left;
+}
+.commentbox .buttonwrap{
+    margin: 0 auto;
+    margin-top: 25px;
+    position: relative;
+    text-align: center;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1150px){/*Makes it so its aligned more on smaller screens*/
+    .buttons{
+        width: 45%;
+    }
+    .homepage{
+        width: 800px;
+    }
+    .house-info{
+        display: none;
+    }
+    .info-media{
+        display: block;
+    }
+}
+@media screen and (max-width: 1000px){
+    footer{
+        display: flex;
+        flex-direction: column;
+    }
+    .form{
+        margin: 0;
+    }
+    .contact-wrap{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 910px){
+    footer{
+        height:250px;
+    }
+    .buttons{
+        width: 200px;
+    }
+}
+@media screen and (max-width: 800px){
+    
+    /*-----Title-----*/
+    .normal{
+        display: none;
+    }
+    .small{
+        display: block;
+    }
+    
+} 
